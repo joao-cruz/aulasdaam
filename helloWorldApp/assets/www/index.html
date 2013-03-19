@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hello World</title>
+		<script type="text/javascript" charset="utf-8" src="cordova-1.7.0.js"></script>
+		<script type="text/javascript">
+			window.addEventListener('load', function(){
+				document.addEventListener("deviceready", onDeviceReady, false)
+			}, false);
+			
+			function onDeviceReady() {
+				var items = document.getElementById("properties");
+				items.innerHTML = 
+				'Device Name = ' + device.name + '<br/>' + 
+				'Device UUID = ' + device.uuid + '<br/>' + 
+				'Device Platform = ' + device.platform + '<br/>' +
+				'Device Version = ' + device.version + '<br/>' ; 
+				 
+			}
+		</script>
+	</head>
+	<body>
+		<p id="properties">
+			Reading your device.... he he he.
+		</p>
+	</body>
+</html>

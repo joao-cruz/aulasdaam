@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">IntentsDemo2013</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Your name is:</string>
+    <string name="enteryournametxt">Enter your name:</string>
+    <string name="enternamebtntxt">Enter your name</string>
+    <string name="title_activity_second">SecondActivity</string>
+
+</resources>
