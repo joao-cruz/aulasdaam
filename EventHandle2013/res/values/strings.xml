@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EventHandle2013</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Press the button, please:</string>
+    <string name="pressmebtntxt">Yes, press me now!!!</string>
+    <string name="canpressmetoobtntxt">Can you press me too?</string>
+    <string name="showmeyournametxt">Show me your name!</string>
+    <string name="showmethenamebtn">Show me the name!</string>
+
+</resources>

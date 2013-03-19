@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="action_settings">Definições</string>
+    <string name="app_name">EventHandle2013</string>
+    <string name="canpressmetoobtntxt">Pode carregar em mim tb?</string>
+    <string name="hello_world">Carregue no botão, pf:</string>
+    <string name="pressmebtntxt">Sim, carregue em mim!!!</string>
+    <string name="showmethenamebtn">Mostre-me o nome!</string>
+    <string name="showmeyournametxt">Mostre-me o seu nome!</string>
+
+</resources>
