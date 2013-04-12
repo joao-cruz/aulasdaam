@@ -24,5 +24,17 @@ public class MainActivity extends Activity {
 	public void onSharePreferencesButton(View v) {
 		startActivity(new Intent(this, SharedPreferencesActivity.class));
 	}
+	
+	public void onInternalMemoryButton(View v){
+		startActivity(new Intent(this, InternalMemoryActivity.class));
+	}
 
+	public void onExternalMemoryButton(View v){
+		startActivity(new Intent(this, ExternalMemoryActivity.class));
+	}
+	
+	public void onSQLiteButton(View v){
+		startActivity(new Intent(this, SQLiteActivity.class));
+	}
+	
 }

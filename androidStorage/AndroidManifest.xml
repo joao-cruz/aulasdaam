@@ -26,6 +26,22 @@
             android:name="pt.iscte.daam.androidstorage.SharedPreferencesActivity"
             android:label="@string/title_activity_shared_preferences" >
         </activity>
+        <activity
+            android:name="pt.iscte.daam.androidstorage.InternalMemoryActivity"
+            android:label="@string/title_activity_internal_memory" >
+        </activity>
+        <activity
+            android:name="pt.iscte.daam.androidstorage.ExternalMemoryActivity"
+            android:label="@string/title_activity_external_memory" >
+        </activity>
+        <activity
+            android:name="pt.iscte.daam.androidstorage.SQLiteActivity"
+            android:label="@string/title_activity_sqlite" >
+        </activity>
+        <activity
+            android:name="pt.iscte.daam.androidstorage.SQLiteActivityDetails"
+            android:label="@string/title_activity_sqlite_activity_details" >
+        </activity>
     </application>
 
 </manifest>
