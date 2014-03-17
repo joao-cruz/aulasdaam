@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, MultipleActivitiesActivity!</string>
+    <string name="app_name">MultipleActivities</string>
+    <string name="mySecondTitle">Second Window Title</string>
+    <string name="textViewTitle">Secondary Window!!!!</string>
+
+</resources>
