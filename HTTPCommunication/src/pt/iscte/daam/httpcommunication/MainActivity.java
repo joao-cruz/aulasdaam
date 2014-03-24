@@ -77,7 +77,7 @@ public class MainActivity extends Activity {
 			
 			try {
 				HttpClient httpc = new DefaultHttpClient();
-				HttpPost hpost = new HttpPost("http://www.hugacity.com/hugapi/places.php"); //The URL of the service to invoke!
+				HttpPost hpost = new HttpPost("http://www.carlosserrao.net/test/add.php"); //The URL of the service to invoke!
 				hpost.setEntity(new UrlEncodedFormEntity(nvpair));
 				response = httpc.execute(hpost, new BasicResponseHandler());
 				
