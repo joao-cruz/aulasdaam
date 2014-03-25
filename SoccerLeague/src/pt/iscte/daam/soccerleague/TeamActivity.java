@@ -60,7 +60,15 @@ public class TeamActivity extends Activity {
 	
 	public void clickCheckTeams(View v)
 	{
-		startActivity(new Intent(this, ListTeamsActivity.class));
+		//startActivity(new Intent(this, ListTeamsActivity.class));
+		ConnectivityManager connMgr = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo netInfo = connMgr.getActiveNetworkInfo();
+		if(netInfo != null && netInfo.isConnected()){
+			//ok the network is running, so please go ahead and do your stuff
+			new ListTeams().execute();
+		} else {
+			Toast.makeText(getApplicationContext(), "Problems with the network connection.", Toast.LENGTH_LONG).show();
+		}
 	}
 	
 	private class AddTeam extends AsyncTask<String, Void, String> {
@@ -79,13 +87,56 @@ public class TeamActivity extends Activity {
 		protected String doInBackground(String... params)
 		{
 			String response = null;
-			nvpair.add(new BasicNameValuePair("team", params[0]));
+			nvpair.add(new BasicNameValuePair("op", "ADDTEAM"));
+			nvpair.add(new BasicNameValuePair("name", params[0]));
 			nvpair.add(new BasicNameValuePair("city", params[1]));
-			nvpair.add(new BasicNameValuePair("found", params[2]));
+			nvpair.add(new BasicNameValuePair("tfy", params[2]));
 			
 			try {
 				HttpClient httpc = new DefaultHttpClient();
-				HttpPost hpost = new HttpPost("http://www.carlosserrao.net/test/soccerleague/teams.php"); //The URL of the service to invoke!
+				HttpPost hpost = new HttpPost("http://www.carlosserrao.net/test/soccerleague/team.php"); //The URL of the service to invoke!
+				hpost.setEntity(new UrlEncodedFormEntity(nvpair));
+				response = httpc.execute(hpost, new BasicResponseHandler());
+				
+				Log.d("debug_msg", "Response = " + response);
+				
+			} catch(Exception e) {
+				Log.e("mylogtag", "An exception has occured in the connection - " + e.toString());
+			}
+			
+			return response;
+		}
+		
+		@Override
+		protected void onPostExecute(String result)
+		{
+			dialog.dismiss();
+			
+			Toast.makeText(getApplicationContext(), "Result = " + result, Toast.LENGTH_LONG).show();
+		}
+	}
+	
+	private class ListTeams extends AsyncTask<String, Void, String> {
+		ArrayList<NameValuePair> nvpair = new ArrayList<NameValuePair>();
+		
+		private ProgressDialog dialog = new ProgressDialog(TeamActivity.this);
+		
+		@Override
+		protected void onPreExecute()
+		{
+			dialog.setMessage("Sending team to server...");
+			dialog.show();
+		}
+		
+		@Override
+		protected String doInBackground(String... params)
+		{
+			String response = null;
+			nvpair.add(new BasicNameValuePair("op", "LIST"));
+			
+			try {
+				HttpClient httpc = new DefaultHttpClient();
+				HttpPost hpost = new HttpPost("http://www.carlosserrao.net/test/soccerleague/team.php"); //The URL of the service to invoke!
 				hpost.setEntity(new UrlEncodedFormEntity(nvpair));
 				response = httpc.execute(hpost, new BasicResponseHandler());
 				
