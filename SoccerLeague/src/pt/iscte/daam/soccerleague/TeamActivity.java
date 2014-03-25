@@ -9,12 +9,15 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -51,7 +54,7 @@ public class TeamActivity extends Activity {
 		NetworkInfo netInfo = connMgr.getActiveNetworkInfo();
 		if(netInfo != null && netInfo.isConnected()){
 			//ok the network is running, so please go ahead and do your stuff
-			new AddTeam().execute(teamname.getText().toString(), city.getText().toString(), foundation.getText().toString());
+			new AddTeam().execute("ADDTEAM", teamname.getText().toString(), city.getText().toString(), foundation.getText().toString());
 		} else {
 			Toast.makeText(getApplicationContext(), "Problems with the network connection.", Toast.LENGTH_LONG).show();
 		}
@@ -60,15 +63,7 @@ public class TeamActivity extends Activity {
 	
 	public void clickCheckTeams(View v)
 	{
-		//startActivity(new Intent(this, ListTeamsActivity.class));
-		ConnectivityManager connMgr = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-		NetworkInfo netInfo = connMgr.getActiveNetworkInfo();
-		if(netInfo != null && netInfo.isConnected()){
-			//ok the network is running, so please go ahead and do your stuff
-			new ListTeams().execute();
-		} else {
-			Toast.makeText(getApplicationContext(), "Problems with the network connection.", Toast.LENGTH_LONG).show();
-		}
+		startActivity(new Intent(this, ListTeamsActivity.class));
 	}
 	
 	private class AddTeam extends AsyncTask<String, Void, String> {
@@ -87,10 +82,13 @@ public class TeamActivity extends Activity {
 		protected String doInBackground(String... params)
 		{
 			String response = null;
-			nvpair.add(new BasicNameValuePair("op", "ADDTEAM"));
-			nvpair.add(new BasicNameValuePair("name", params[0]));
-			nvpair.add(new BasicNameValuePair("city", params[1]));
-			nvpair.add(new BasicNameValuePair("tfy", params[2]));
+			
+			if(params[0].compareTo("ADDTEAM")==0) {
+				nvpair.add(new BasicNameValuePair("op", params[0]));
+				nvpair.add(new BasicNameValuePair("name", params[1]));
+				nvpair.add(new BasicNameValuePair("city", params[2]));
+				nvpair.add(new BasicNameValuePair("tfy", params[3]));
+			}
 			
 			try {
 				HttpClient httpc = new DefaultHttpClient();
@@ -112,50 +110,24 @@ public class TeamActivity extends Activity {
 		{
 			dialog.dismiss();
 			
-			Toast.makeText(getApplicationContext(), "Result = " + result, Toast.LENGTH_LONG).show();
-		}
-	}
-	
-	private class ListTeams extends AsyncTask<String, Void, String> {
-		ArrayList<NameValuePair> nvpair = new ArrayList<NameValuePair>();
-		
-		private ProgressDialog dialog = new ProgressDialog(TeamActivity.this);
-		
-		@Override
-		protected void onPreExecute()
-		{
-			dialog.setMessage("Sending team to server...");
-			dialog.show();
-		}
-		
-		@Override
-		protected String doInBackground(String... params)
-		{
-			String response = null;
-			nvpair.add(new BasicNameValuePair("op", "LIST"));
-			
 			try {
-				HttpClient httpc = new DefaultHttpClient();
-				HttpPost hpost = new HttpPost("http://www.carlosserrao.net/test/soccerleague/team.php"); //The URL of the service to invoke!
-				hpost.setEntity(new UrlEncodedFormEntity(nvpair));
-				response = httpc.execute(hpost, new BasicResponseHandler());
+				JSONObject json_response = new JSONObject(result);
 				
-				Log.d("debug_msg", "Response = " + response);
+				if(json_response.get("result").toString().compareTo("ERR")==0) {
+					AlertDialog.Builder adig = new AlertDialog.Builder(TeamActivity.this);
+					adig.setMessage(json_response.get("status").toString());
+					adig.setCancelable(true);
+					AlertDialog diag = adig.create();
+					diag.show();
+				} else {
+					Toast.makeText(getApplicationContext(), "Team was added with success!", Toast.LENGTH_LONG).show();
+				}
 				
-			} catch(Exception e) {
-				Log.e("mylogtag", "An exception has occured in the connection - " + e.toString());
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 			
-			return response;
-		}
-		
-		@Override
-		protected void onPostExecute(String result)
-		{
-			dialog.dismiss();
-			
-			Toast.makeText(getApplicationContext(), "Result = " + result, Toast.LENGTH_LONG).show();
 		}
 	}
-	
 }

@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"fore",
+				"foreground"
+			],
+			[
+				"mysq",
+				"mysql_connect  (function)"
+			],
+			[
 				"lo",
 				"loginURL  (variable)"
 			],
@@ -91,13 +99,6 @@
 	},
 	"buffers":
 	[
-		{
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "Packages/Titanium Build/Titanium.sublime-build",
 	"command_palette":
@@ -163,6 +164,11 @@
 	},
 	"file_history":
 	[
+		"/Volumes/UserData/carlosserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/20132014/Development/aulasdaam/SoccerLeague/backend/bd.sql",
+		"/Volumes/UserData/carlosserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/20132014/Development/aulasdaam/SoccerLeague/backend/Team.class.php",
+		"/Volumes/UserData/carlosserrao/Library/Caches/Cleanup At Startup/Transmit/922EFB09-EF16-4EEC-8E8E-E36FC8D85BD2/teams.php",
+		"/Volumes/UserData/carlosserrao/Library/Caches/Cleanup At Startup/Transmit/82A3B768-4F4E-42B8-B13A-106F93A04FF0/LocalSettings.php",
+		"/Volumes/UserData/carlosserrao/Library/Caches/Cleanup At Startup/Transmit/E429D160-532B-4757-8E45-F8CC759586A8/index.php",
 		"/Volumes/UserData/carlosserrao/Library/Caches/Cleanup At Startup/Transmit/86FD4749-F98D-4AD3-B67D-53E6FE0C346A/teams.php",
 		"/Volumes/UserData/carlosserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/20132014/Development/fenix.php",
 		"/Volumes/UserData/carlosserrao/Documents/Development/Lighthouse/lighthouse/app/controllers/index.js",
@@ -268,34 +274,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
