@@ -7,9 +7,9 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
-    
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -32,6 +32,10 @@
         <activity
             android:name="pt.iscte.daam.soccerleague.ListTeamsActivity"
             android:label="@string/title_activity_list_teams" >
+        </activity>
+        <activity
+            android:name="pt.iscte.daam.soccerleague.TeamDetailActivity"
+            android:label="@string/title_activity_team_detail" >
         </activity>
     </application>
 

@@ -33,8 +33,12 @@ class Team
         mysql_query($sql, $this->dbconn);
     }
 
-    public function delete()
+    public function delete($teamid)
     {
+        $sql = "delete from team where id = ".$teamid;
+        $rs = mysql_query($sql, $this->dbconn);
+        if($rs == true) return true;
+        else return false;
 
     }
 
@@ -47,7 +51,21 @@ class Team
     {
         $sql = "select * from team";
         $rs = mysql_query($sql, $this->dbconn);
-        return mysql_fetch_array($rs);
+
+        $teams = array();
+
+        $n=0;
+        while(($a = mysql_fetch_row($rs))) {
+            $teams[$n] = array(
+                "id" => $a[0],
+                "tname" => $a[1],
+                "tcity" => $a[2],
+                "tfy" => $a[3]
+            ); 
+            $n++;
+        }
+
+        return $teams;
     }
 
     function __destruct()

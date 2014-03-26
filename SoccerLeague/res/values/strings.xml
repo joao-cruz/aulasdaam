@@ -6,5 +6,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_team">TeamActivity</string>
     <string name="title_activity_list_teams">ListTeamsActivity</string>
+    <string name="title_activity_team_detail">TeamDetailActivity</string>
 
 </resources>
