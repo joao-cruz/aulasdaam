@@ -23,8 +23,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.util.Log;
 import android.view.Menu;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -67,7 +65,7 @@ public class ListTeamsActivity extends Activity {
 		@Override
 		protected void onPreExecute()
 		{
-			dialog.setMessage("Getting list of teams from server...");
+			dialog.setMessage("Sending team to server...");
 			dialog.show();
 		}
 		
