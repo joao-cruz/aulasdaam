@@ -5,9 +5,9 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="11"
         android:targetSdkVersion="18" />
-    
+
     <permission
         android:name="pt.iscte.mapssample.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
@@ -38,14 +38,42 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
+
         <meta-data
-		    android:name="com.google.android.gms.version"
-		    android:value="@integer/google_play_services_version" />
-        
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyD6URiD3hrG3-OFZ7cCE6MXd6fWpZO4ahg" />
+
+        <activity
+            android:name="pt.iscte.mapssample.BasicMapActivity"
+            android:label="@string/title_activity_basic_map" >
+        </activity>
+        <activity
+            android:name="pt.iscte.mapssample.PositionAndZoomActivity"
+            android:label="@string/title_activity_position_and_zoom" >
+        </activity>
+        <activity
+            android:name="pt.iscte.mapssample.ChangeMapActivity"
+            android:label="@string/title_activity_change_map" >
+        </activity>
+        <activity
+            android:name="pt.iscte.mapssample.IndoorMapsActivity"
+            android:label="@string/title_activity_indoor_maps" >
+        </activity>
+        <activity
+            android:name="pt.iscte.mapssample.MapMarkersActivity"
+            android:label="@string/title_activity_map_markers" >
+        </activity>
+        <activity
+            android:name="pt.iscte.mapssample.CameraAnimationsActivity"
+            android:label="@string/title_activity_camera_animations" >
+        </activity>
+        <activity
+            android:name="pt.iscte.mapssample.MapLinesActivity"
+            android:label="@string/title_activity_map_lines" >
+        </activity>
     </application>
 
 </manifest>

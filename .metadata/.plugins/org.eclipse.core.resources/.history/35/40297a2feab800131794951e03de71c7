@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MapsSample</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_basic_map">BasicMapActivity</string>
+    <string name="title_activity_position_and_zoom">PositionAndZoomActivity</string>
+    <string name="title_activity_change_map">ChangeMapActivity</string>
+    <string name="title_activity_indoor_maps">IndoorMapsActivity</string>
+    <string name="title_activity_map_markers">MapMarkersActivity</string>
+    <string name="title_activity_camera_animations">CameraAnimationsActivity</string>
+
+</resources>

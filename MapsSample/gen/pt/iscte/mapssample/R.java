@@ -221,22 +221,44 @@ containing a value of this type.
         public static final int ic_plusone_tall_off_client=0x7f02001c;
     }
     public static final class id {
-        public static final int action_settings=0x7f050006;
+        public static final int action_settings=0x7f05000e;
+        public static final int button1=0x7f050006;
+        public static final int button2=0x7f050007;
+        public static final int button3=0x7f050008;
+        public static final int button4=0x7f05000a;
+        public static final int button5=0x7f05000b;
+        public static final int button6=0x7f05000c;
+        public static final int button7=0x7f05000d;
         public static final int hybrid=0x7f050004;
         public static final int map=0x7f050005;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
         public static final int satellite=0x7f050002;
         public static final int terrain=0x7f050003;
+        public static final int textView1=0x7f050009;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f070000;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
+        public static final int activity_basic_map=0x7f030000;
+        public static final int activity_camera_animations=0x7f030001;
+        public static final int activity_change_map=0x7f030002;
+        public static final int activity_indoor_maps=0x7f030003;
+        public static final int activity_main=0x7f030004;
+        public static final int activity_map_lines=0x7f030005;
+        public static final int activity_map_markers=0x7f030006;
+        public static final int activity_position_and_zoom=0x7f030007;
     }
     public static final class menu {
-        public static final int main=0x7f0a0000;
+        public static final int basic_map=0x7f0a0000;
+        public static final int camera_animations=0x7f0a0001;
+        public static final int change_map=0x7f0a0002;
+        public static final int indoor_maps=0x7f0a0003;
+        public static final int main=0x7f0a0004;
+        public static final int map_lines=0x7f0a0005;
+        public static final int map_markers=0x7f0a0006;
+        public static final int position_and_zoom=0x7f0a0007;
     }
     public static final class string {
         public static final int action_settings=0x7f06001b;
@@ -336,6 +358,13 @@ containing a value of this type.
          */
         public static final int common_signin_button_text_long=0x7f060013;
         public static final int hello_world=0x7f06001c;
+        public static final int title_activity_basic_map=0x7f06001d;
+        public static final int title_activity_camera_animations=0x7f060022;
+        public static final int title_activity_change_map=0x7f06001f;
+        public static final int title_activity_indoor_maps=0x7f060020;
+        public static final int title_activity_map_lines=0x7f060023;
+        public static final int title_activity_map_markers=0x7f060021;
+        public static final int title_activity_position_and_zoom=0x7f06001e;
     }
     public static final class style {
         /** 

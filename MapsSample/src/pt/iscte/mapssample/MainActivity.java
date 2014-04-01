@@ -1,26 +1,16 @@
 package pt.iscte.mapssample;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
 
-import android.support.v4.app.FragmentActivity;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.GoogleMap;
-
-public class MainActivity extends FragmentActivity {
-
-	SupportMapFragment mMap;
-	GoogleMap googleMap;
-	
+public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		mMap = (SupportMapFragment) getSupportFragmentManager()
-	            .findFragmentById(R.id.map);
-
-	            googleMap = mMap.getMap();
 	}
 
 	@Override
@@ -29,5 +19,39 @@ public class MainActivity extends FragmentActivity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+	
+	public void clickSimpleMapButton(View v)
+	{
+		startActivity(new Intent(this, BasicMapActivity.class));
+	}
+	
+	public void clickPositionAndZoomButton(View v)
+	{
+		startActivity(new Intent(this, PositionAndZoomActivity.class));
+	}
+	
+	public void clickChangeMapButton(View v)
+	{
+		startActivity(new Intent(this, ChangeMapActivity.class));
+	}
+	
+	public void clickIndoorMapsButton(View v)
+	{
+		startActivity(new Intent(this, IndoorMapsActivity.class));
+	}
 
+	public void clickMapMarkersButton(View v)
+	{
+		startActivity(new Intent(this, MapMarkersActivity.class));
+	}
+	
+	public void clickCameraAnimationsButton(View v)
+	{
+		startActivity(new Intent(this, CameraAnimationsActivity.class));
+	}
+	
+	public void clickMapLinesButton(View v)
+	{
+		startActivity(new Intent(this, MapLinesActivity.class));
+	}
 }
