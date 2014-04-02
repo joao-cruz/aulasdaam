@@ -55,4 +55,6 @@
 <fullyQualifiedTypeName name="android.location.LocationManager"/>
 <fullyQualifiedTypeName name="com.google.android.gms.location.LocationListener"/>
 <fullyQualifiedTypeName name="com.google.android.gms.common.GooglePlayServicesClient"/>
+<fullyQualifiedTypeName name="android.webkit.WebView"/>
+<fullyQualifiedTypeName name="pt.iscte.daam.webviewdemojs.R.id"/>
 </qualifiedTypeNameHistroy>

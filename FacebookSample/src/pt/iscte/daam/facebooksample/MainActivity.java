@@ -42,18 +42,6 @@ public class MainActivity extends Activity {
 					});
 		    		request.executeAsync();
 		    		
-		    		/*
-		    		Request.executeMeRequestAsync(session, new Request.GraphUserCallback() {
-
-		    		  // callback after Graph API response with user object
-		    		  @Override
-		    		  public void onCompleted(GraphUser user, Response response) {
-		    			  if (user != null) {
-		    				  TextView wctxt = (TextView) findViewById(R.id.welcome);
-		    				  wctxt.setText("Hello " + user.getName() + "!");
-		    				}	
-		    		  }
-		    		});*/
 		    	}
 		    }
 		  });

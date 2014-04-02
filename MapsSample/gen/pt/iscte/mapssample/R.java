@@ -261,8 +261,8 @@ containing a value of this type.
         public static final int position_and_zoom=0x7f0a0007;
     }
     public static final class string {
-        public static final int action_settings=0x7f06001b;
-        public static final int app_name=0x7f06001a;
+        public static final int action_settings=0x7f06001c;
+        public static final int app_name=0x7f06001b;
         /**   Title for notification shown when GooglePlayServices needs to be
         enabled for a application to work. [CHAR LIMIT=70] 
          */
@@ -357,14 +357,17 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f060013;
-        public static final int hello_world=0x7f06001c;
-        public static final int title_activity_basic_map=0x7f06001d;
-        public static final int title_activity_camera_animations=0x7f060022;
-        public static final int title_activity_change_map=0x7f06001f;
-        public static final int title_activity_indoor_maps=0x7f060020;
-        public static final int title_activity_map_lines=0x7f060023;
-        public static final int title_activity_map_markers=0x7f060021;
-        public static final int title_activity_position_and_zoom=0x7f06001e;
+        public static final int hello_world=0x7f06001d;
+        /**  Location client code resources (prefix with location_client) 
+         */
+        public static final int location_client_powered_by_google=0x7f06001a;
+        public static final int title_activity_basic_map=0x7f06001e;
+        public static final int title_activity_camera_animations=0x7f060023;
+        public static final int title_activity_change_map=0x7f060020;
+        public static final int title_activity_indoor_maps=0x7f060021;
+        public static final int title_activity_map_lines=0x7f060024;
+        public static final int title_activity_map_markers=0x7f060022;
+        public static final int title_activity_position_and_zoom=0x7f06001f;
     }
     public static final class style {
         /** 
