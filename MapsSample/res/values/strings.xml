@@ -11,5 +11,7 @@
     <string name="title_activity_map_markers">MapMarkersActivity</string>
     <string name="title_activity_camera_animations">CameraAnimationsActivity</string>
     <string name="title_activity_map_lines">MapLinesActivity</string>
+    <string name="title_activity_refresh_map">RefreshMapActivity</string>
+    <string name="title_activity_maps_refresh">MapsRefreshActivity</string>
 
 </resources>

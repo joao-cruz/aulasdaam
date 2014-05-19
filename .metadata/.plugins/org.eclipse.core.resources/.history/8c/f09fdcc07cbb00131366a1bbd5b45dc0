@@ -1,0 +1,213 @@
+package pt.iscte.lighthouseapp;
+
+
+import java.util.ArrayList;
+
+import org.apache.http.Header;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.ResponseHandler;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.BasicResponseHandler;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicHeader;
+import org.apache.http.protocol.HTTP;
+import org.json.JSONObject;
+
+import android.support.v7.app.ActionBarActivity;
+import android.support.v4.app.Fragment;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
+
+public class MainActivity extends ActionBarActivity {
+	
+	String csrftoken = null;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        performSessionStart();
+        performSignIn("carlos.serrao@iscte.pt", "ecommerce");
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.container, new PlaceholderFragment())
+                    .commit();
+        }
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    
+    public boolean performSessionStart() {
+    	ConnectivityManager connMgr = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo netInfo = connMgr.getActiveNetworkInfo();
+		if(netInfo != null && netInfo.isConnected()){
+			//ok the network is running, so please go ahead and do your stuff
+			new sessionStart().execute();
+			return true;
+		} else {
+			Toast.makeText(getApplicationContext(), "Problems with the network connection.", Toast.LENGTH_LONG).show();
+			return false;
+		}
+    }
+    
+    public boolean performSignIn(String username, String password)
+    {
+    	new signIn().execute(username, password);
+    	return true;
+    }
+    
+    private class sessionStart extends AsyncTask<String, Void, String> {
+    	String epURL = "https://www.lhmon.com/s/api/sign/session";
+    	
+		@Override
+		protected void onPreExecute()
+		{
+		}
+		
+		@Override
+		protected String doInBackground(String... params)
+		{
+			HttpResponse response = null;
+			String cookie = null;
+			
+			try {
+				HttpClient httpc = new DefaultHttpClient();
+				HttpGet htget = new HttpGet(epURL);
+				response = httpc.execute(htget);
+				
+				//response.getHeaders("set-cookie").toString();
+				
+				Header[] headers = response.getAllHeaders();
+				for (Header header : headers) {
+					System.out.println("Key : " + header.getName() 
+					      + " ,Value : " + header.getValue());
+					
+					if(header.getName().compareTo("Set-Cookie")==0) {
+						cookie = header.getValue().substring(10, 42);
+						break;
+					}
+				}
+				
+			} catch(Exception e) {
+				Log.e("mylogtag", "An exception has occured in the connection - " + e.toString());
+			}
+			
+			System.out.println("Cookie = " + cookie);
+			
+			return cookie;
+		}
+		
+		@Override
+		protected void onPostExecute(String result)
+		{
+			System.out.println("CSRFToken = " + result);
+			csrftoken = result;
+		}
+	}
+    
+    private class signIn extends AsyncTask<String, Void, String> {
+    	String epURLSignIn = "https://www.lhmon.com/s/api/sign/signin";
+    	
+		@Override
+		protected void onPreExecute()
+		{
+		}
+		
+		@Override
+		protected String doInBackground(String... params)
+		{
+			String response = null;
+			String payload = "{\"username\":\""+params[0]+"\", \"password\":\""+params[1]+"\"}";
+			
+			
+			try {
+				JSONObject data = new JSONObject();
+				data.put("username", params[0]);
+				data.put("password", params[1]);
+
+				//StringEntity seData = new StringEntity(data.toString());
+				StringEntity seData = new StringEntity(payload);
+				seData.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
+				
+				HttpClient httpc = new DefaultHttpClient();
+				HttpPost htpost = new HttpPost(epURLSignIn);
+				htpost.setHeader("X-CSRFToken", csrftoken);
+				htpost.setHeader("Referer", "https://www.lhmon.com/s/api/");
+				htpost.setHeader("Content-Type", "application/json; charset=utf-8");
+				
+				System.out.println("CSRF = " + csrftoken);
+				
+				htpost.setEntity(seData);
+				
+				ResponseHandler<String> responseHandler = new BasicResponseHandler();
+				response = httpc.execute(htpost, responseHandler);
+				
+				
+			} catch(Exception e) {
+				Log.e("mylogtag", "An exception has occured in the connection - " + e.toString());
+			}
+			
+			System.out.println("Response = " + response);
+			
+			return response;
+		}
+		
+		@Override
+		protected void onPostExecute(String result)
+		{
+			System.out.println("Answer = " + result);
+		}
+	}
+
+    /**
+     * A placeholder fragment containing a simple view.
+     */
+    public static class PlaceholderFragment extends Fragment {
+
+        public PlaceholderFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+            return rootView;
+        }
+    }
+
+}

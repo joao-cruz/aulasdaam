@@ -182,6 +182,11 @@ containing a value of this type.
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
 
+         Example customization of dimensions originally defined in res/values/dimens.xml
+         (such as screen margins) for screens with more than 820dp of available width. This
+         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
+    
+
          Customize dimensions originally defined in res/values/dimens.xml (such as
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
@@ -221,7 +226,7 @@ containing a value of this type.
         public static final int ic_plusone_tall_off_client=0x7f02001c;
     }
     public static final class id {
-        public static final int action_settings=0x7f05000e;
+        public static final int action_settings=0x7f050010;
         public static final int button1=0x7f050006;
         public static final int button2=0x7f050007;
         public static final int button3=0x7f050008;
@@ -229,10 +234,12 @@ containing a value of this type.
         public static final int button5=0x7f05000b;
         public static final int button6=0x7f05000c;
         public static final int button7=0x7f05000d;
+        public static final int container=0x7f05000e;
         public static final int hybrid=0x7f050004;
         public static final int map=0x7f050005;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
+        public static final int refreshablelistview=0x7f05000f;
         public static final int satellite=0x7f050002;
         public static final int terrain=0x7f050003;
         public static final int textView1=0x7f050009;
@@ -248,7 +255,10 @@ containing a value of this type.
         public static final int activity_main=0x7f030004;
         public static final int activity_map_lines=0x7f030005;
         public static final int activity_map_markers=0x7f030006;
-        public static final int activity_position_and_zoom=0x7f030007;
+        public static final int activity_maps_refresh=0x7f030007;
+        public static final int activity_position_and_zoom=0x7f030008;
+        public static final int activity_refresh_map=0x7f030009;
+        public static final int fragment_maps_refresh=0x7f03000a;
     }
     public static final class menu {
         public static final int basic_map=0x7f0a0000;
@@ -258,7 +268,8 @@ containing a value of this type.
         public static final int main=0x7f0a0004;
         public static final int map_lines=0x7f0a0005;
         public static final int map_markers=0x7f0a0006;
-        public static final int position_and_zoom=0x7f0a0007;
+        public static final int maps_refresh=0x7f0a0007;
+        public static final int position_and_zoom=0x7f0a0008;
     }
     public static final class string {
         public static final int action_settings=0x7f06001c;
@@ -367,7 +378,9 @@ containing a value of this type.
         public static final int title_activity_indoor_maps=0x7f060021;
         public static final int title_activity_map_lines=0x7f060024;
         public static final int title_activity_map_markers=0x7f060022;
+        public static final int title_activity_maps_refresh=0x7f060026;
         public static final int title_activity_position_and_zoom=0x7f06001f;
+        public static final int title_activity_refresh_map=0x7f060025;
     }
     public static final class style {
         /** 
