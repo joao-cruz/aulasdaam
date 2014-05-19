@@ -27,9 +27,9 @@ function Controller() {
                     subtitle: result.weather[0].main + ", Temp: " + result.main.temp + "ºC",
                     pincolor: Alloy.Globals.Map.ANNOTATION_RED,
                     animate: true,
-                    rightButton: result.weather[0].icon + ".png"
+                    rightButton: d_img_loc + result.weather[0].icon + ".png"
                 });
-                Ti.App.Properties.setString("weatherimage", result.weather[0].icon + ".png");
+                Ti.App.Properties.setString("weatherimage", d_img_loc + result.weather[0].icon + ".png");
                 Ti.App.Properties.setString("maincondition", result.weather[0].main);
                 Ti.App.Properties.setString("temp", result.main.temp);
                 Ti.App.Properties.setString("tempmax", result.main.temp_max);
@@ -138,6 +138,8 @@ function Controller() {
     $.__views.weatherWindow && $.addTopLevelView($.__views.weatherWindow);
     exports.destroy = function() {};
     _.extend($, $.__views);
+    var d_img_loc;
+    d_img_loc = "";
     $.weatherWindow.addEventListener("open", function() {
         if (Ti.Geolocation.locationServicesEnabled) {
             Titanium.Geolocation.purpose = "Get Current Location";
@@ -164,9 +166,9 @@ function Controller() {
                                 subtitle: result.weather[0].main + ", Temp: " + result.main.temp + "ºC",
                                 pincolor: Alloy.Globals.Map.ANNOTATION_RED,
                                 animate: true,
-                                rightButton: result.weather[0].icon + ".png"
+                                rightButton: d_img_loc + result.weather[0].icon + ".png"
                             });
-                            Ti.App.Properties.setString("weatherimage", result.weather[0].icon + ".png");
+                            Ti.App.Properties.setString("weatherimage", d_img_loc + result.weather[0].icon + ".png");
                             Ti.App.Properties.setString("maincondition", result.weather[0].main);
                             Ti.App.Properties.setString("temp", result.main.temp);
                             Ti.App.Properties.setString("tempmax", result.main.temp_max);
@@ -193,12 +195,22 @@ function Controller() {
         "" != $.cityName.value && lookFor(e);
     });
     $.mapview.addEventListener("click", function(e) {
+        console.log("you clicked the *** annotation!!!");
+        console.log("source = " + e.clicksource);
         if ("rightButton" == e.clicksource) {
             Ti.App.Properties.setString("cityName", e.title);
             var detailsWindow = Alloy.createController("weatherdetails").getView();
             detailsWindow.open({
                 modalTransitionStyle: Titanium.UI.iPhone.MODAL_TRANSITION_STYLE_COVER_VERTICAL
             });
+        } else {
+            console.log("you clicked the *** annotation!!!");
+            console.log("source = " + e.clicksource);
+            if ("infoWindow" == e.clicksource) {
+                Ti.App.Properties.setString("cityName", e.title);
+                var detailsWindow = Alloy.createController("weatherdetails").getView();
+                detailsWindow.open();
+            }
         }
     });
     $.weatherWindow.open();

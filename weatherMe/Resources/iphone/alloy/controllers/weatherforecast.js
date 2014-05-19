@@ -101,6 +101,8 @@ function Controller() {
     $.__views.forecastWindow && $.addTopLevelView($.__views.forecastWindow);
     exports.destroy = function() {};
     _.extend($, $.__views);
+    var d_img_loc;
+    d_img_loc = "";
     $.forecastWindow.addEventListener("open", function() {
         var forecastURL = "http://api.openweathermap.org/data/2.5/forecast/daily?q=" + Ti.App.Properties.getString("cityName") + "&mode=json&units=metric&cnt=7";
         var xhr = Titanium.Network.createHTTPClient({
@@ -114,7 +116,7 @@ function Controller() {
                     dateString = theDate.toDateString();
                     $.forecastListSection.appendItems([ {
                         icon: {
-                            image: result.list[i].weather[0].icon + ".png"
+                            image: d_img_loc + result.list[i].weather[0].icon + ".png"
                         },
                         wday: {
                             text: dateString

@@ -160,7 +160,7 @@ function Controller() {
     exports.destroy = function() {};
     _.extend($, $.__views);
     var facebook = Alloy.Globals.Facebook;
-    facebook.appid = 0x5244719131e1f;
+    facebook.appid = "1447262665514527";
     facebook.permissions = [ "user_about_me", "publish_stream" ];
     facebook.forceDialogAuth = true;
     $.detailsWindow.addEventListener("open", function() {

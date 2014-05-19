@@ -2,7 +2,7 @@
  * Facebook application data
  */
 var facebook = Alloy.Globals.Facebook;
-facebook.appid=1447262665514527;
+facebook.appid="1447262665514527";
 facebook.permissions=['user_about_me','publish_stream'];
 facebook.forceDialogAuth = true;
 
@@ -23,6 +23,7 @@ $.detailsWindow.addEventListener("open", function(e) {
 function shareWeather(e) {
     if(facebook.loggedIn) {
         
+        
         facebook.requestWithGraphPath('me/feed', {message: "Sharing weather conditions with WeatherMe!"}, 
          "POST", function(e) {
             if (e.success) {
@@ -35,6 +36,18 @@ function shareWeather(e) {
                 }
             }
         });
+        
+       /*
+       facebook.requestWithGraphPath('me', {}, 'GET', function(e) {
+            if(e.success) {
+               var result = JSON.parse(e.result);
+               console.log(e.result);
+               
+            } else {
+                alert(e.error);
+            }
+        });
+        */
     } else {
         facebook.authorize();
     }

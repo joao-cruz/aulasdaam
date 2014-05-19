@@ -1,3 +1,10 @@
+var d_img_loc;
+if(OS_ANDROID) {
+    d_img_loc = 'images/';
+} else {
+    d_img_loc = '';
+}
+
 function closeForecast(e) {
     $.forecastWindow.close();
 }
@@ -19,7 +26,7 @@ $.forecastWindow.addEventListener('open', function(e){
                               
                $.forecastListSection.appendItems([{
                     icon: {
-                        image: result.list[i].weather[0].icon + ".png"
+                        image: d_img_loc + result.list[i].weather[0].icon + ".png"
                     },
                     wday: {
                         text: dateString

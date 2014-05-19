@@ -1,3 +1,10 @@
+var d_img_loc;
+if(OS_ANDROID) {
+    d_img_loc = 'images/';
+} else {
+    d_img_loc = '';
+}
+
 $.weatherWindow.addEventListener("open", function(e) {
     if (Ti.Geolocation.locationServicesEnabled) {
         Titanium.Geolocation.purpose = 'Get Current Location';
@@ -34,10 +41,10 @@ $.weatherWindow.addEventListener("open", function(e) {
                             subtitle: result.weather[0].main + ', Temp: ' + result.main.temp + 'ºC',
                             pincolor: Alloy.Globals.Map.ANNOTATION_RED,
                             animate: true,
-                            rightButton: result.weather[0].icon + '.png'
+                            rightButton: d_img_loc + result.weather[0].icon + '.png'
                         });
                         
-                        Ti.App.Properties.setString('weatherimage', result.weather[0].icon + '.png');
+                        Ti.App.Properties.setString('weatherimage', d_img_loc + result.weather[0].icon + '.png');
                         Ti.App.Properties.setString('maincondition', result.weather[0].main);
                         Ti.App.Properties.setString('temp', result.main.temp);
                         Ti.App.Properties.setString('tempmax', result.main.temp_max);
@@ -69,11 +76,19 @@ $.weatherWindow.addEventListener("open", function(e) {
     }
 });
 
-$.weatherWWindow.addEventListener("return", function(e) {
-   //alert($.cityName.value); 
-   if($.cityName.value != '')
-        lookFor(e);
-});
+if(OS_IOS) {
+    $.weatherWWindow.addEventListener("return", function(e) {
+       //alert($.cityName.value); 
+       if($.cityName.value != '')
+            lookFor(e);
+    });
+} else {
+    $.weatherWindow.addEventListener("return", function(e) {
+       //alert($.cityName.value); 
+       if($.cityName.value != '')
+            lookFor(e);
+    });
+} 
 
 function lookFor(e) {
     //alert($.cityName.value); 
@@ -118,11 +133,11 @@ function lookFor(e) {
                 subtitle: result.weather[0].main + ', Temp: ' + result.main.temp + 'ºC',
                 pincolor: Alloy.Globals.Map.ANNOTATION_RED,
                 animate: true,
-                rightButton: result.weather[0].icon + '.png'
+                rightButton: d_img_loc + result.weather[0].icon + '.png'
             });
             
             
-            Ti.App.Properties.setString('weatherimage', result.weather[0].icon + '.png');
+            Ti.App.Properties.setString('weatherimage', d_img_loc + result.weather[0].icon + '.png');
             Ti.App.Properties.setString('maincondition', result.weather[0].main);
             Ti.App.Properties.setString('temp', result.main.temp);
             Ti.App.Properties.setString('tempmax', result.main.temp_max);
@@ -149,6 +164,9 @@ function lookFor(e) {
 }
 
 $.mapview.addEventListener('click', function(e) {
+    console.log('you clicked the *** annotation!!!');
+    console.log('source = ' + e.clicksource);
+
     if (e.clicksource == 'rightButton') {
         // handle the full report
         //alert(e.title);
@@ -159,7 +177,16 @@ $.mapview.addEventListener('click', function(e) {
         detailsWindow.open({
             modalTransitionStyle: Titanium.UI.iPhone.MODAL_TRANSITION_STYLE_COVER_VERTICAL
         });
-    }    
+    } else {
+        console.log('you clicked the *** annotation!!!');
+        console.log('source = ' + e.clicksource);
+        if(e.clicksource == 'infoWindow') {
+            Ti.App.Properties.setString("cityName", e.title);
+            
+            var detailsWindow = Alloy.createController("weatherdetails").getView();
+            detailsWindow.open();
+        }
+    }
 });
 
 function openFavourites(e) {
