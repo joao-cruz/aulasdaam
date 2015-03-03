@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SaveAndRestoreState</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title">Show me your name</string>
+    <string name="nameEnter">Enter name:</string>
+    <string name="buttonEnter">Ask</string>
+</resources>
