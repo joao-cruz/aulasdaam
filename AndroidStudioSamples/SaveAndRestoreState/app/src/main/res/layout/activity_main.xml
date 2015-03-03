@@ -23,16 +23,16 @@
         android:id="@+id/textViewEnterName"
         android:layout_below="@+id/textViewTitle"
         android:layout_alignParentStart="true"
-        android:layout_alignBottom="@+id/editText"
         android:gravity="bottom"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_alignBottom="@+id/editTextName" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/editTextName"
         android:layout_below="@+id/textViewTitle"
         android:layout_alignParentEnd="true" />
 
@@ -41,17 +41,16 @@
         android:layout_height="wrap_content"
         android:text="@string/buttonEnter"
         android:id="@+id/buttonAsk"
-        android:layout_below="@+id/editText"
-        android:layout_alignEnd="@+id/editText" />
+        android:layout_below="@+id/editTextName"
+        android:layout_alignEnd="@+id/editTextName" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/textView3"
+        android:id="@+id/textViewCountLetters"
         android:layout_below="@+id/buttonAsk"
-        android:layout_alignEnd="@+id/editText"
+        android:layout_alignEnd="@+id/editTextName"
         android:layout_marginTop="42dp"
         android:layout_alignParentStart="true"
         android:textStyle="bold" />

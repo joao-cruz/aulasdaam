@@ -1314,10 +1314,11 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f08002e;
         public static final int action_mode_bar_stub=0x7f08002d;
         public static final int action_mode_close_button=0x7f080020;
-        public static final int action_settings=0x7f08003f;
+        public static final int action_settings=0x7f080044;
         public static final int activity_chooser_view_content=0x7f080021;
         public static final int always=0x7f08000f;
         public static final int beginning=0x7f08000a;
+        public static final int buttonAsk=0x7f080042;
         public static final int checkbox=0x7f080029;
         public static final int collapseActionView=0x7f080011;
         public static final int decor_content_parent=0x7f08002f;
@@ -1325,6 +1326,7 @@ containing a value of this type.
         public static final int dialog=0x7f080012;
         public static final int disableHome=0x7f080009;
         public static final int dropdown=0x7f080013;
+        public static final int editTextName=0x7f080041;
         public static final int edit_query=0x7f080033;
         public static final int end=0x7f08000c;
         public static final int expand_activities_button=0x7f080022;
@@ -1360,6 +1362,9 @@ containing a value of this type.
         public static final int split_action_bar=0x7f08001c;
         public static final int submit_area=0x7f08003c;
         public static final int tabMode=0x7f080002;
+        public static final int textViewCountLetters=0x7f080043;
+        public static final int textViewEnterName=0x7f080040;
+        public static final int textViewTitle=0x7f08003f;
         public static final int title=0x7f080027;
         public static final int up=0x7f08001d;
         public static final int useLogo=0x7f080004;
@@ -1421,7 +1426,10 @@ containing a value of this type.
         public static final int abc_toolbar_collapse_description=0x7f0b000f;
         public static final int action_settings=0x7f0b0010;
         public static final int app_name=0x7f0b0011;
-        public static final int hello_world=0x7f0b0012;
+        public static final int buttonEnter=0x7f0b0012;
+        public static final int hello_world=0x7f0b0013;
+        public static final int nameEnter=0x7f0b0014;
+        public static final int title=0x7f0b0015;
     }
     public static final class style {
         /**  Customize your theme here. 
