@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">UITest</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="mainText">Basic UI Testing</string>
+    <string name="nameInput">Introduza nome:</string>
+    <string name="emailText">Email:</string>
+    <string name="enterButtonTxt">Adicionar valores</string>
+</resources>
