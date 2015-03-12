@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/InformationStorage/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/InformationStorage/app/build/intermediates/pre-dexed/debug/classes-7e2e01ad56662bd57c21b29a03a42649078fa0ed.jar" />
+    </item>
+    <item
+        jar="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/InformationStorage/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/InformationStorage/app/build/intermediates/pre-dexed/debug/classes-9635a4624085399d8a2cc6109501d527dcff3bba.jar" />
+    </item>
+    <item
+        jar="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/InformationStorage/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/InformationStorage/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-75e59803b3a0c5534dcd379c5865a733c50c172f.jar" />
+    </item>
+    <item
+        jar="/Users/cserrao/Applications/Android/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/InformationStorage/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-fdd4841cc5089254f60a26597870eb7c95d36598.jar" />
+    </item>
+
+</items>
