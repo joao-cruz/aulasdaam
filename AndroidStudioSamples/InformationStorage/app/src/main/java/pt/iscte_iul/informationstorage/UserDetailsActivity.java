@@ -1,6 +1,7 @@
 package pt.iscte_iul.informationstorage;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -90,6 +91,10 @@ public class UserDetailsActivity extends ActionBarActivity {
                 Toast.makeText(UserDetailsActivity.this, "Image Does Not exist or Network Error", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    public void openContactsManager(View v) {
+        startActivity(new Intent(this, ContactsManagerActivity.class));
     }
 
 

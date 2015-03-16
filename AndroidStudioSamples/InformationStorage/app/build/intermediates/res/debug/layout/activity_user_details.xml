@@ -57,5 +57,15 @@
         android:onClick="fetchImage"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contacts"
+        android:id="@+id/buttonContacts"
+        android:onClick="openContactsManager"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
 <!-- From: file:/Users/cserrao/Documents/Aulas/Desenvolvimento%20de%20Aplicações%20para%20Ambientes%20Móveis/aulasdaam/AndroidStudioSamples/InformationStorage/app/src/main/res/layout/activity_user_details.xml -->

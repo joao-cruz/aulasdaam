@@ -34,6 +34,10 @@
             android:name="pt.iscte_iul.informationstorage.UserDetailsActivity"
             android:label="@string/title_activity_user_details" >
         </activity>
+        <activity
+            android:name="pt.iscte_iul.informationstorage.ContactsManagerActivity"
+            android:label="@string/title_activity_contacts_manager" >
+        </activity>
     </application>
 
 </manifest>

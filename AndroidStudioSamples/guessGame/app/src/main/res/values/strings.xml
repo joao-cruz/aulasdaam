@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">guessGame</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="gameTitleString">My Guess Game</string>
+    <string name="guessNumberString">Valor:</string>
+    <string name="adivinharButtonString">Adivinhar</string>
+    <string name="tryAgainBtnString">Tentar de Novo</string>
+    <string name="novaActivityString">Nova Atividade</string>
+    <string name="title_activity_second">SecondActivity</string>
+    <string name="startActivityWithDataString">Actividade com Dados</string>
+    <string name="valorPassadoString">Valor:</string>
+    <string name="abrirURLString">Abrir URL</string>
+
+</resources>
