@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Sample Maps App"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Simple Map"
+        android:id="@+id/buttonSimpleMap"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:onClick="simpleMapOpen"
+        android:layout_marginTop="26dp" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Position And Zoom"
+        android:id="@+id/button"
+        android:onClick="positionAndZoomOpen"
+        android:layout_below="@+id/buttonSimpleMap" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Change Map Type"
+        android:id="@+id/button2"
+        android:onClick="changeMapTypeOpen"
+        android:layout_below="@+id/button"/>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Indoor Maps"
+        android:id="@+id/button3"
+        android:onClick="indoorMapsOpen"
+        android:layout_below="@+id/button2" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Camera Animation"
+        android:id="@+id/button4"
+        android:onClick="cameraAnimationOpen"
+        android:layout_below="@+id/button3" />
+</RelativeLayout>

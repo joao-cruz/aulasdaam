@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SampleMaps</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_simple_map">SimpleMapActivity</string>
+    <string name="title_activity_position_and_zoom">PositionAndZoomActivity</string>
+    <string name="title_activity_change_map_type">ChangeMapTypeActivity</string>
+    <string name="title_activity_indoor_maps">IndoorMapsActivity</string>
+    <string name="title_activity_camera_animation">CameraAnimationActivity</string>
+</resources>

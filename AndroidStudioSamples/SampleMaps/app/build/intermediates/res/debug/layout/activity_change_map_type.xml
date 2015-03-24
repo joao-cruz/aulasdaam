@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="pt.iscte_iul.samplemaps.ChangeMapTypeActivity">
+
+    <fragment
+        android:id="@+id/mapViewChangeMapType"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Map"
+        android:id="@+id/buttonMap"
+        android:onClick="mapOpen"
+        android:layout_alignTop="@+id/mapViewChangeMapType"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hybrid"
+        android:id="@+id/buttonHybrid"
+        android:onClick="hybridOpen"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/buttonMap"
+        android:layout_toEndOf="@+id/buttonMap" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Terrain"
+        android:id="@+id/buttonTerrain"
+        android:onClick="terrainOpen"
+        android:layout_alignTop="@+id/mapViewChangeMapType"
+        android:layout_toRightOf="@+id/buttonHybrid"
+        android:layout_toEndOf="@+id/buttonHybrid" />
+
+</RelativeLayout>
+<!-- From: file:/Users/cserrao/Documents/Aulas/Desenvolvimento%20de%20Aplicações%20para%20Ambientes%20Móveis/aulasdaam/AndroidStudioSamples/SampleMaps/app/src/main/res/layout/activity_change_map_type.xml -->
