@@ -16,4 +16,4 @@
 <translate xmlns:android="http://schemas.android.com/apk/res/android"
            android:interpolator="@android:anim/accelerate_interpolator"
            android:fromYDelta="0" android:toYDelta="-50%p"
-           android:duration="@android:integer/config_mediumAnimTime"/><!-- From: file:/Users/cserrao/Sites/aulasped/ped2015/guideMe/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/anim/abc_slide_out_top.xml -->
+           android:duration="@android:integer/config_mediumAnimTime"/><!-- From: file:/Users/cserrao/Documents/Aulas/Desenvolvimento%20de%20Aplicações%20para%20Ambientes%20Móveis/aulasdaam/AndroidStudioSamples/guideMe/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/anim/abc_slide_out_top.xml -->
