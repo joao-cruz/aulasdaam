@@ -11,6 +11,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -29,6 +31,7 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.net.URI;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -39,11 +42,18 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
     public GoogleMap t_map;
     public Map <Marker, Integer> hmap;
     public static final String PREFS_NAME = "AppData";
+    public static final String APPNAME = "guideMe";
     public static final int RANGE = 50;
     public int myRange;
     public String serviceURL;
-    public static String APIURL = "http://192.168.1.104:3000";
+    public static String APIURL = "http://192.168.1.113:3000";
     protected SharedPreferences appData;
+    private static final int REQUEST_CODE = 1;
+    private static final int REQUEST_ADD_POI = 2;
+    private static final int REQUEST_SETTINGS = 2;
+
+    protected Marker tempMarker;
+    protected LatLng latlong;
 
 
     @Override
@@ -68,24 +78,61 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
         t_map.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
             @Override
             public void onInfoWindowClick(Marker marker) {
-                Log.i("guideMe", "Click on marker with ID = " + hmap.get(marker));
-                Intent i = new Intent(MainActivity.this, POIDetailsActivity.class);
-                i.putExtra("id", hmap.get(marker));
-                startActivity(i);
+                if(marker.getTitle().compareTo("New POI") == 0) {
+                    Intent i = new Intent(MainActivity.this, AddPOIActivity.class);
+                    i.putExtra("latitude", latlong.latitude);
+                    i.putExtra("longitude", latlong.longitude);
+                    startActivityForResult(i, REQUEST_ADD_POI);
+                } else {
+                    Log.i("guideMe", "Click on marker with ID = " + hmap.get(marker));
+                    Intent i = new Intent(MainActivity.this, POIDetailsActivity.class);
+                    i.putExtra("id", hmap.get(marker));
+                    startActivity(i);
+                }
             }
         });
 
         t_map.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
             @Override
             public void onMapLongClick(LatLng latLng) {
-                // delete all POIs from map
+
+                if(tempMarker != null) {
+                    tempMarker.remove();
+                }
+
+                //add a new marker to the map
+                tempMarker = t_map.addMarker(new MarkerOptions()
+                        .title("New POI")
+                        .position(latLng));
+
+                latlong = latLng;
+
+            }
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i(APPNAME, "-> onResume()");
+
+        // delete all POIs from map
+        if(hmap != null) {
+            if(!hmap.isEmpty()) {
+                Log.i(APPNAME, "hmap is not empty, so we can delete the POIs");
                 for(Map.Entry<Marker,Integer> entry : hmap.entrySet()) {
                     entry.getKey().remove();
                 }
                 // get and add new POIs
                 new getPOIs().execute();
+            } else {
+                Log.i(APPNAME, "hmap is empty, so do nothing!!!");
             }
-        });
+        }
+
+        if(tempMarker!=null) {
+            tempMarker.remove();
+        }
     }
 
     @Override
@@ -118,9 +165,9 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
                 myRange = appData.getInt("range", RANGE);
                 Log.i("guideMe", "Using this range = " + myRange);
                 HttpClient httpclient = new DefaultHttpClient();
-                Log.i("guideMe", "Asking  = " + serviceURL + "/poi/range/"+latitude+"/"+longitude+"/"+myRange*1000);
+                Log.i("guideMe", "Asking  = " + serviceURL + "poi/range/"+latitude+"/"+longitude+"/"+myRange*1000);
 
-                HttpResponse httpResponse = httpclient.execute(new HttpGet(serviceURL + "/poi/range/"+latitude+"/"+longitude+"/"+myRange*1000));
+                HttpResponse httpResponse = httpclient.execute(new HttpGet(new URI(serviceURL + "poi/range/"+latitude+"/"+longitude+"/"+myRange*1000)));
 
                 BufferedReader reader = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent(), "UTF-8"));
                 response = reader.readLine();
@@ -185,8 +232,35 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             Intent i = new Intent(MainActivity.this, SettingsActivity.class);
-            startActivity(i);
+            startActivityForResult(i, REQUEST_SETTINGS);
             return true;
+        }
+
+        if(id == R.id.addpoiid) {
+            Intent intent = new Intent();
+            intent.setType("image/*");
+            intent.setAction(Intent.ACTION_GET_CONTENT);
+            intent.addCategory(Intent.CATEGORY_OPENABLE);
+            startActivityForResult(intent, REQUEST_CODE);
+        }
+
+        if(id == R.id.refreshmap) {
+            // delete all POIs from map
+            if(hmap != null) {
+                if(!hmap.isEmpty()) {
+                    Log.i(APPNAME, "hmap is not empty, so we can delete the POIs");
+                    for(Map.Entry<Marker,Integer> entry : hmap.entrySet()) {
+                        entry.getKey().remove();
+                    }
+                    // get and add new POIs
+                    new getPOIs().execute();
+                } else {
+                    Log.i(APPNAME, "hmap is empty, so do nothing!!!");
+                }
+            }
+            if(tempMarker!=null) {
+                tempMarker.remove();
+            }
         }
 
         return super.onOptionsItemSelected(item);

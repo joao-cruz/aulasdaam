@@ -1,0 +1,6 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="pt.iscte_iul.guideme.AddPOIActivity">
+</menu>
+<!-- From: file:/Users/cserrao/Documents/Aulas/Desenvolvimento%20de%20Aplicações%20para%20Ambientes%20Móveis/aulasdaam/AndroidStudioSamples/guideMe/app/src/main/res/menu/menu_add_poi.xml -->

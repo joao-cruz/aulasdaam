@@ -251,6 +251,7 @@
     <string name="store_picture_title">Save image</string>
     <!-- From: file:/Users/cserrao/Documents/Aulas/Desenvolvimento%20de%20Aplicações%20para%20Ambientes%20Móveis/aulasdaam/AndroidStudioSamples/guideMe/app/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <string name="title_activity_add_poi">AddPOIActivity</string>
     <string name="title_activity_poidetails">POIDetailsActivity</string>
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="title_activity_splash">SplashActivity</string>

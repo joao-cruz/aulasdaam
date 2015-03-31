@@ -13,6 +13,10 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
         android:allowBackup="true"
@@ -21,11 +25,13 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="pt.iscte_iul.guideme.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="pt.iscte_iul.guideme.SplashActivity"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Black.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,11 +49,18 @@
 
         <activity
             android:name="pt.iscte_iul.guideme.POIDetailsActivity"
-            android:label="@string/title_activity_poidetails" >
+            android:label="@string/title_activity_poidetails"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="pt.iscte_iul.guideme.SettingsActivity"
-            android:label="@string/title_activity_settings" >
+            android:label="@string/title_activity_settings"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="pt.iscte_iul.guideme.AddPOIActivity"
+            android:label="@string/title_activity_add_poi"
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 

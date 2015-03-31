@@ -1,3 +1,4 @@
+/* implementing the POI functionalities */
 var express = require('express');
 var mysql = require('mysql');
 var geo = require('geolib');

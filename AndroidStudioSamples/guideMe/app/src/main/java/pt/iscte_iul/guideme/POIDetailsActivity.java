@@ -27,6 +27,7 @@ import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.net.URI;
 import java.util.HashMap;
 
 
@@ -78,7 +79,7 @@ public class POIDetailsActivity extends ActionBarActivity {
                 HttpClient httpclient = new DefaultHttpClient();
                 Log.i("guideMe", "Asking  = " + defaultURL + "/poi/"+idPOI);
 
-                HttpResponse httpResponse = httpclient.execute(new HttpGet(defaultURL + "/poi/"+idPOI));
+                HttpResponse httpResponse = httpclient.execute(new HttpGet(new URI(defaultURL + "poi/"+idPOI)));
 
                 BufferedReader reader = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent(), "UTF-8"));
                 response = reader.readLine();
@@ -131,11 +132,6 @@ public class POIDetailsActivity extends ActionBarActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }

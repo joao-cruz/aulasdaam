@@ -25,7 +25,7 @@ public class SplashActivity extends Activity implements LocationListener {
         setContentView(R.layout.activity_splash);
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
         // podem ser usados outros providers (GPS_PROVIDER, etc.)!!!
 
         dialog = new ProgressDialog(SplashActivity.this);
@@ -86,11 +86,6 @@ public class SplashActivity extends Activity implements LocationListener {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }
