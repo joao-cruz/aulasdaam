@@ -38,6 +38,9 @@ public class POIDetailsActivity extends ActionBarActivity {
     ImageView imageIV;
 
     public static final String PREFS_NAME = "AppData";
+    public static final String APPNAME = "guideMe";
+    public static String APIURL = "http://192.168.1.113:3000/";
+    public String serviceURL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,7 @@ public class POIDetailsActivity extends ActionBarActivity {
         addressTV = (TextView) findViewById(R.id.addressTextView);
         descriptionTV = (TextView) findViewById(R.id.descriptionTextView);
         imageIV = (ImageView) findViewById(R.id.POIimageView);
+
 
         Intent i = getIntent();
         idPOI = i.getIntExtra("id", 0);
@@ -79,7 +83,7 @@ public class POIDetailsActivity extends ActionBarActivity {
                 HttpClient httpclient = new DefaultHttpClient();
                 Log.i("guideMe", "Asking  = " + defaultURL + "/poi/"+idPOI);
 
-                HttpResponse httpResponse = httpclient.execute(new HttpGet(new URI(defaultURL + "poi/"+idPOI)));
+                HttpResponse httpResponse = httpclient.execute(new HttpGet(new URI(defaultURL + "/poi/"+idPOI)));
 
                 BufferedReader reader = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent(), "UTF-8"));
                 response = reader.readLine();

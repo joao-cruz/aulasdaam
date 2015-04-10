@@ -26,6 +26,7 @@ public class SplashActivity extends Activity implements LocationListener {
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
         // podem ser usados outros providers (GPS_PROVIDER, etc.)!!!
 
         dialog = new ProgressDialog(SplashActivity.this);

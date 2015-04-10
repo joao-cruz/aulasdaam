@@ -2,25 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/Users/cserrao/Sites/aulasped/ped2015/guideMe/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="/Users/cserrao/Sites/aulasped/ped2015/guideMe/app/build/intermediates/pre-dexed/debug/classes-c92ddcd9861e0be4a55111db00e542125ed2315b.jar" />
-    </item>
-    <item
         jar="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/guideMe/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
         jumboMode="false"
         revision="20.0.0"
         sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
         <dex dex="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/guideMe/app/build/intermediates/pre-dexed/debug/classes-9a77c6077b3b8bc65165d384becfa15804394ca2.jar" />
-    </item>
-    <item
-        jar="/Users/cserrao/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="/Users/cserrao/Sites/aulasped/ped2015/guideMe/app/build/intermediates/pre-dexed/debug/picasso-2.5.2-9a82cd537491452a8ab6844d4ed9d3fd854a54a9.jar" />
     </item>
     <item
         jar="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/guideMe/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/classes.jar"
@@ -44,20 +30,6 @@
         <dex dex="/Users/cserrao/Sites/aulasped/ped2015/guideMe/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-c3bd812de8568e66205f01611427f71a3ef03c28.jar" />
     </item>
     <item
-        jar="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/guideMe/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/guideMe/app/build/intermediates/pre-dexed/debug/classes-2654212d8d171187605b93b1af85caf1c23f59c0.jar" />
-    </item>
-    <item
-        jar="/Users/cserrao/Sites/aulasped/ped2015/guideMe/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/classes.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="dd9247ea0fabe8ee479638c4b4a23e93752be256">
-        <dex dex="/Users/cserrao/Sites/aulasped/ped2015/guideMe/app/build/intermediates/pre-dexed/debug/classes-7f5a534b5d3b3bcfcaacdfdf60d7ffec927e122c.jar" />
-    </item>
-    <item
         jar="/Users/cserrao/Sites/aulasped/ped2015/guideMe/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
         jumboMode="false"
         revision="20.0.0"
@@ -70,6 +42,55 @@
         revision="20.0.0"
         sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
         <dex dex="/Users/cserrao/Sites/aulasped/ped2015/guideMe/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-fdd4841cc5089254f60a26597870eb7c95d36598.jar" />
+    </item>
+    <item
+        jar="/Users/cserrao/Sites/aulasped/ped2015/guideMe/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/cserrao/Sites/aulasped/ped2015/guideMe/app/build/intermediates/pre-dexed/debug/classes-c92ddcd9861e0be4a55111db00e542125ed2315b.jar" />
+    </item>
+    <item
+        jar="/Users/cserrao/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/cserrao/Sites/aulasped/ped2015/guideMe/app/build/intermediates/pre-dexed/debug/picasso-2.5.2-9a82cd537491452a8ab6844d4ed9d3fd854a54a9.jar" />
+    </item>
+    <item
+        jar="/Users/cserrao/.gradle/caches/modules-2/files-2.1/com.koushikdutta.ion/ion/2.1.3/659c4d0a26ab5d857db1440199cef6dd42b4428/ion-2.1.3.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="0659c4d0a26ab5d857db1440199cef6dd42b4428">
+        <dex dex="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/guideMe/app/build/intermediates/pre-dexed/debug/ion-2.1.3-f51297f064a35a5960db3efbf986e2836bb2639d.jar" />
+    </item>
+    <item
+        jar="/Users/cserrao/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3/5fc52c41ef0239d1093a1eb7c3697036183677ce/gson-2.3.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="5fc52c41ef0239d1093a1eb7c3697036183677ce">
+        <dex dex="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/guideMe/app/build/intermediates/pre-dexed/debug/gson-2.3-8438eaf0bca9790528f75ae6546aedc403361637.jar" />
+    </item>
+    <item
+        jar="/Users/cserrao/.gradle/caches/modules-2/files-2.1/com.koushikdutta.async/androidasync/2.1.3/52aed89a155265a48984ecc06aa8dec12674edad/androidasync-2.1.3.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="52aed89a155265a48984ecc06aa8dec12674edad">
+        <dex dex="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/guideMe/app/build/intermediates/pre-dexed/debug/androidasync-2.1.3-5c836b355642b3b27a3bd5157a3a5580316c99ac.jar" />
+    </item>
+    <item
+        jar="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/guideMe/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/guideMe/app/build/intermediates/pre-dexed/debug/classes-2654212d8d171187605b93b1af85caf1c23f59c0.jar" />
+    </item>
+    <item
+        jar="/Users/cserrao/Sites/aulasped/ped2015/guideMe/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="dd9247ea0fabe8ee479638c4b4a23e93752be256">
+        <dex dex="/Users/cserrao/Sites/aulasped/ped2015/guideMe/app/build/intermediates/pre-dexed/debug/classes-7f5a534b5d3b3bcfcaacdfdf60d7ffec927e122c.jar" />
     </item>
 
 </items>

@@ -2,6 +2,7 @@
 var express = require('express');
 var mysql = require('mysql');
 var geo = require('geolib');
+var fs = require('fs');
 
 var connection = mysql.createConnection({
     host     : '127.0.0.1',
@@ -20,6 +21,7 @@ connection.connect(function(err) {
 });
 
 exports.addPOI = function(req, res) {
+    console.log("Received a request ---->");
     console.log(req.body);
 
     var poi  = {
@@ -123,4 +125,33 @@ exports.getPOIByType = function(req, res) {
     });
 };
 
+exports.uploadFile = function(req, res) {
+    console.log(req.files);
+    console.log(req.files.image.originalname);
+    console.log(req.files.image.path);
+    fs.readFile(req.files.image.path, function (err, data){
+        var dirname = "/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/guideMe/guideme";
+        var newPath = dirname + "/images/" +   req.files.image.originalname;
+        fs.writeFile(newPath, data, function (err) {
+            if(err){
+                res.json({'response':"Error"});
+            }else {
+                res.json({'response':"Saved"});
 
+                fs.unlink(req.files.image.path, function (err) {
+                   if(err) {
+                       console.log("Error removing file...");
+                   }
+                });
+            }
+        });
+    });
+};
+
+exports.getFile = function (req, res) {
+    file = req.params.file;
+    var dirname = "/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/guideMe/guideme";
+    var img = fs.readFileSync(dirname + "/images/" + file);
+    res.writeHead(200, {'Content-Type': 'image/jpg' });
+    res.end(img, 'binary');
+};

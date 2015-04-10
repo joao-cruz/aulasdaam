@@ -14,7 +14,8 @@
         android:drawableLeft="@drawable/gallery"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/buttonAddNewPOI"
-        android:layout_alignEnd="@+id/buttonAddNewPOI" />
+        android:layout_alignEnd="@+id/buttonAddNewPOI"
+        android:onClick="clickShowGallery"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -32,7 +33,8 @@
         android:text="Add New POI"
         android:id="@+id/buttonAddNewPOI"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="addNewPOI"/>
 
     <TextView
         android:layout_width="fill_parent"
@@ -67,7 +69,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/POInameET"
         android:layout_centerVertical="true"
         android:layout_toRightOf="@+id/textView4"
         android:layout_alignRight="@+id/imageView2"
@@ -79,7 +81,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Description"
         android:id="@+id/textView5"
-        android:layout_below="@+id/editText"
+        android:layout_below="@+id/POInameET"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -90,14 +92,15 @@
         android:id="@+id/button"
         android:layout_below="@+id/textView5"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:onClick="selectTypeButton"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="POI Type"
-        android:id="@+id/textView7"
+        android:id="@+id/textViewPOIType"
         android:layout_below="@+id/button"
         android:layout_alignRight="@+id/button"
         android:layout_alignEnd="@+id/button" />
@@ -105,7 +108,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText2"
+        android:id="@+id/descriptionET"
         android:layout_below="@+id/textView4"
         android:layout_toRightOf="@+id/textView5"
         android:layout_alignRight="@+id/textViewLatLong"

@@ -2,7 +2,9 @@ package pt.iscte_iul.guideme;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -13,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -126,6 +129,7 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
                 // get and add new POIs
                 new getPOIs().execute();
             } else {
+                new getPOIs().execute();
                 Log.i(APPNAME, "hmap is empty, so do nothing!!!");
             }
         }
@@ -165,9 +169,9 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
                 myRange = appData.getInt("range", RANGE);
                 Log.i("guideMe", "Using this range = " + myRange);
                 HttpClient httpclient = new DefaultHttpClient();
-                Log.i("guideMe", "Asking  = " + serviceURL + "poi/range/"+latitude+"/"+longitude+"/"+myRange*1000);
+                Log.i("guideMe", "Asking  = " + serviceURL + "/poi/range/"+latitude+"/"+longitude+"/"+myRange*1000);
 
-                HttpResponse httpResponse = httpclient.execute(new HttpGet(new URI(serviceURL + "poi/range/"+latitude+"/"+longitude+"/"+myRange*1000)));
+                HttpResponse httpResponse = httpclient.execute(new HttpGet(new URI(serviceURL + "/poi/range/"+latitude+"/"+longitude+"/"+myRange*1000)));
 
                 BufferedReader reader = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent(), "UTF-8"));
                 response = reader.readLine();
@@ -242,6 +246,7 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
             intent.setAction(Intent.ACTION_GET_CONTENT);
             intent.addCategory(Intent.CATEGORY_OPENABLE);
             startActivityForResult(intent, REQUEST_CODE);
+
         }
 
         if(id == R.id.refreshmap) {
@@ -256,6 +261,7 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
                     new getPOIs().execute();
                 } else {
                     Log.i(APPNAME, "hmap is empty, so do nothing!!!");
+                    new getPOIs().execute();
                 }
             }
             if(tempMarker!=null) {

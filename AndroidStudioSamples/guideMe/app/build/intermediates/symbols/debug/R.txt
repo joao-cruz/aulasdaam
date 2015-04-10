@@ -434,6 +434,7 @@ int drawable photo 0x7f020054
 int drawable powered_by_google_dark 0x7f020055
 int drawable powered_by_google_light 0x7f020056
 int id POIimageView 0x7f090060
+int id POInameET 0x7f090059
 int id action_bar 0x7f090045
 int id action_bar_activity_content 0x7f090029
 int id action_bar_container 0x7f090044
@@ -469,13 +470,12 @@ int id classic 0x7f090026
 int id collapseActionView 0x7f090016
 int id decor_content_parent 0x7f090043
 int id default_activity_button 0x7f090038
+int id descriptionET 0x7f09005d
 int id descriptionTextView 0x7f090062
 int id dialog 0x7f090017
 int id disableHome 0x7f090009
 int id donate_with_google 0x7f090025
 int id dropdown 0x7f090018
-int id editText 0x7f090059
-int id editText2 0x7f09005d
 int id editTextURL 0x7f090067
 int id edit_query 0x7f090047
 int id end 0x7f09000c
@@ -535,8 +535,8 @@ int id textView2 0x7f090066
 int id textView3 0x7f090068
 int id textView4 0x7f090057
 int id textView5 0x7f09005a
-int id textView7 0x7f09005c
 int id textViewLatLong 0x7f090056
+int id textViewPOIType 0x7f09005c
 int id textViewRange 0x7f090065
 int id title 0x7f09003b
 int id up 0x7f090031

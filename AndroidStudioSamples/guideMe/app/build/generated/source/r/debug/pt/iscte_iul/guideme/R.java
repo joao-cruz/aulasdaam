@@ -1696,6 +1696,7 @@ containing a value of this type.
     }
     public static final class id {
         public static final int POIimageView=0x7f090060;
+        public static final int POInameET=0x7f090059;
         public static final int action_bar=0x7f090045;
         public static final int action_bar_activity_content=0x7f090029;
         public static final int action_bar_container=0x7f090044;
@@ -1731,13 +1732,12 @@ containing a value of this type.
         public static final int collapseActionView=0x7f090016;
         public static final int decor_content_parent=0x7f090043;
         public static final int default_activity_button=0x7f090038;
+        public static final int descriptionET=0x7f09005d;
         public static final int descriptionTextView=0x7f090062;
         public static final int dialog=0x7f090017;
         public static final int disableHome=0x7f090009;
         public static final int donate_with_google=0x7f090025;
         public static final int dropdown=0x7f090018;
-        public static final int editText=0x7f090059;
-        public static final int editText2=0x7f09005d;
         public static final int editTextURL=0x7f090067;
         public static final int edit_query=0x7f090047;
         public static final int end=0x7f09000c;
@@ -1797,8 +1797,8 @@ containing a value of this type.
         public static final int textView3=0x7f090068;
         public static final int textView4=0x7f090057;
         public static final int textView5=0x7f09005a;
-        public static final int textView7=0x7f09005c;
         public static final int textViewLatLong=0x7f090056;
+        public static final int textViewPOIType=0x7f09005c;
         public static final int textViewRange=0x7f090065;
         public static final int title=0x7f09003b;
         public static final int up=0x7f090031;
