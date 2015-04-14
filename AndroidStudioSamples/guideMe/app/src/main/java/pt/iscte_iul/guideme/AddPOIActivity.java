@@ -3,6 +3,7 @@ package pt.iscte_iul.guideme;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.CursorLoader;
 import android.content.DialogInterface;
@@ -13,6 +14,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
@@ -44,12 +46,17 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URI;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 
 
@@ -71,6 +78,12 @@ public class AddPOIActivity extends ActionBarActivity {
 
     protected String path;
     protected String filename;
+
+    private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 200;
+    private Uri fileUri;
+
+    public static final int MEDIA_TYPE_IMAGE = 1;
+    public static final int MEDIA_TYPE_VIDEO = 2;
 
 
     @Override
@@ -133,8 +146,17 @@ public class AddPOIActivity extends ActionBarActivity {
         startActivityForResult(intent, REQUEST_CODE);
     }
 
+    public void clickShowCamera(View v) {
+        Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+
+        // start the image capture Intent
+        startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
         InputStream stream = null;
         if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
             try {
@@ -168,6 +190,70 @@ public class AddPOIActivity extends ActionBarActivity {
                 }
             }
         }
+        if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+
+
+            Bundle extras = data.getExtras();
+            poiImageIV.setImageBitmap((Bitmap) extras.get("data"));
+
+            try {
+                Bitmap tempBmp = (Bitmap)extras.get("data");
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                tempBmp.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                byte[] b = baos.toByteArray();
+                String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+                filename = "IMG_"+ timeStamp + ".jpg";
+                path = filename;
+                FileOutputStream fileOutStream = openFileOutput(filename, MODE_PRIVATE);
+                FileDescriptor fd  = fileOutStream.getFD();
+                Toast.makeText(this, "Filename = " + fd.toString(), Toast.LENGTH_SHORT).show();
+                fileOutStream.write(b);
+                fileOutStream.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            /*
+
+            //Uri selectedImage = data.getData();
+
+
+            //Bitmap mBitmap = null;
+            try {
+                mBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImage);
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+            */
+
+        } else if (resultCode == RESULT_CANCELED) {
+            // User cancelled the image capture
+        } else {
+            // Image capture failed, advise user
+        }
+    }
+
+    // grab the name of the media from the Uri
+    protected String getName(Uri uri)
+    {
+        String filename = null;
+
+        try {
+            String[] projection = { MediaStore.Images.Media.DISPLAY_NAME };
+            Cursor cursor = managedQuery(uri, projection, null, null, null);
+
+            if(cursor != null && cursor.moveToFirst()){
+                int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DISPLAY_NAME);
+                filename = cursor.getString(column_index);
+            } else {
+                filename = null;
+            }
+        } catch (Exception e) {
+            Log.e("guideMe", "Error getting file name: " + e.getMessage());
+        }
+
+        return filename;
     }
 
     /* the next two functions are simply used to obtain the real location of the image */
