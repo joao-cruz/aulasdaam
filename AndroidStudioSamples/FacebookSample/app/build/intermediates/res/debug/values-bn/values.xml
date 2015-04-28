@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/cserrao/Documents/Aulas/Desenvolvimento%20de%20Aplicações%20para%20Ambientes%20Móveis/aulasdaam/AndroidStudioSamples/FacebookSample/app/build/intermediates/exploded-aar/com.facebook.android/facebook/4.0.1/res/values-bn/values.xml -->
+    <eat-comment/>
+    <string name="messenger_send_button_text">প্রেরণ করুন</string>
+</resources>

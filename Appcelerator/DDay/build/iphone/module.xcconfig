@@ -1,0 +1,5 @@
+// this is a generated file - DO NOT EDIT
+
+TI_MAP_OTHER_LDFLAGS=$(inherited) -weak_framework MapKit
+FACEBOOK_OTHER_LDFLAGS=$(inherited) -weak_framework AdSupport -weak_framework Accounts -weak_framework Social
+OTHER_LDFLAGS=$(inherited) $(TI_MAP_OTHER_LDFLAGS) $(FACEBOOK_OTHER_LDFLAGS) 
