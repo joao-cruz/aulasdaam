@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/MyFaceSample/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/MyFaceSample/app/build/intermediates/pre-dexed/debug/classes-f002fc5ddfe6d3a038e962280c1a13f92682f493.jar" />
+    </item>
+    <item
+        jar="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/MyFaceSample/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/jars/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/MyFaceSample/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-2448c0a749190e7ded80ccfade1726f7f0b44099.jar" />
+    </item>
+    <item
+        jar="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/MyFaceSample/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0f254ec13d6671680482d2218f01ecf14dfa93e6">
+        <dex dex="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/MyFaceSample/app/build/intermediates/pre-dexed/debug/classes-44a8576eddf6692837ffb4d81582ea76d48014e6.jar" />
+    </item>
+    <item
+        jar="/Users/cserrao/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.1.4/129874135e6081269ace2312092031558865de12/bolts-android-1.1.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="129874135e6081269ace2312092031558865de12">
+        <dex dex="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/MyFaceSample/app/build/intermediates/pre-dexed/debug/bolts-android-1.1.4-52f2e3501fd4ad3d07c54e2a37287b657c6f1990.jar" />
+    </item>
+    <item
+        jar="/Users/cserrao/Applications/Android/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/MyFaceSample/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-fdd4841cc5089254f60a26597870eb7c95d36598.jar" />
+    </item>
+    <item
+        jar="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/MyFaceSample/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/cserrao/Documents/Aulas/Desenvolvimento de Aplicações para Ambientes Móveis/aulasdaam/AndroidStudioSamples/MyFaceSample/app/build/intermediates/pre-dexed/debug/classes-d3fcb51c5dd2f8730f1cf8cd2cd93f16e1127758.jar" />
+    </item>
+
+</items>
